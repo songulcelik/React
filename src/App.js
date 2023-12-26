@@ -18,6 +18,10 @@ import BootstrapStatic from "./components/13-bootstrap/bootstrap-static";
 import Icons from "./components/14-icons/icons";
 import Events from "./components/15-events/events";
 import Shop from "./components/16-shop/shop";
+import State from "./components/17-useState/state";
+import Stateless from "./components/17-useState/stateless";
+import Counter from "./components/18-counter/counter";
+import Counter2 from "./components/18-counter/counter2";
 
 const App = () => {
 	return (
@@ -48,11 +52,17 @@ const App = () => {
 			  <Icons/>
 			<Events/>
 
+			<Shop/>
+	 <Stateless/>
+	<State/>
+		<Counter/>
+
+
 			 */}
 
-			<Shop/>
-			
+		<Counter2/>
 		
+	
 	
 			
 		</>
