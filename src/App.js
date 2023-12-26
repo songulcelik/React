@@ -22,6 +22,8 @@ import State from "./components/17-useState/state";
 import Stateless from "./components/17-useState/stateless";
 import Counter from "./components/18-counter/counter";
 import Counter2 from "./components/18-counter/counter2";
+import Birthday from "./components/19-birthday/bithday";
+import Bithday from "./components/19-birthday/bithday";
 
 const App = () => {
 	return (
@@ -56,11 +58,13 @@ const App = () => {
 	 <Stateless/>
 	<State/>
 		<Counter/>
-
+<Counter2/>
 
 			 */}
 
-		<Counter2/>
+			 <Birthday/>
+
+		
 		
 	
 	
