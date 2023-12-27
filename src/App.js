@@ -24,6 +24,9 @@ import Counter from "./components/18-counter/counter";
 import Counter2 from "./components/18-counter/counter2";
 import Birthday from "./components/19-birthday/bithday";
 import Bithday from "./components/19-birthday/bithday";
+import Useeffect1 from "./components/20-useeffect/useeffect1";
+import Useeffect2 from "./components/20-useeffect/useeffect2";
+import Clock3 from "./components/21-clock/clock3";
 
 const App = () => {
 	return (
@@ -60,11 +63,13 @@ const App = () => {
 		<Counter/>
 <Counter2/>
 
+			 <Birthday/>
+	<Useeffect1/>
+
 			 */}
 
-			 <Birthday/>
-
-		
+<Clock3/>
+	
 		
 	
 	
