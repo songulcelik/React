@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, CardBody, CardSubtitle, CardTitle, Col, Image, Row } from 'react-bootstrap'
-import { LiaBirthdayCakeSolid } from "react-icons/lia";
-const Person = ({id,image,name,age}) => {
+import { LiaBirthdayCakeSolid, LiaTrashAlt } from "react-icons/lia";
+const Person = ({id,image,name,age,deletePerson}) => {
   return (
     <Card className='mb-3'>
        <CardBody>
@@ -15,6 +15,9 @@ const Person = ({id,image,name,age}) => {
             </Col>
         </Row>
        </CardBody>
+       <span className='position-absolute end-0 me-3 mt-2 fs-2 text-danger ' style={{cursor:"pointer"}} onClick={() =>deletePerson(id)}>
+        <LiaTrashAlt/>
+       </span>
     </Card>
   )
 }
