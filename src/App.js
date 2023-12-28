@@ -26,6 +26,7 @@ import Birthday from "./components/19-birthday/bithday";
 import Bithday from "./components/19-birthday/bithday";
 import Useeffect1 from "./components/20-useeffect/useeffect1";
 import Useeffect2 from "./components/20-useeffect/useeffect2";
+import Useeffect3 from "./components/20-useeffect/useeffect3";
 import Clock3 from "./components/21-clock/clock3";
 
 const App = () => {
@@ -65,10 +66,11 @@ const App = () => {
 
 			 <Birthday/>
 	<Useeffect1/>
-
+<Clock3/>
 			 */}
 
-<Clock3/>
+<Useeffect3/>
+
 	
 		
 	
