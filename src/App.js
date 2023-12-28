@@ -28,11 +28,14 @@ import Useeffect1 from "./components/20-useeffect/useeffect1";
 import Useeffect2 from "./components/20-useeffect/useeffect2";
 import Useeffect3 from "./components/20-useeffect/useeffect3";
 import Clock3 from "./components/21-clock/clock3";
+import CountryFilter from "./components/22-country-filter/country-filter";
+import Useref from "./components/23-useref/useref";
+import Scroll from "./components/24-useref/scroll";
 
 const App = () => {
-	return (
-		<>
-			{/* <HelloReact/>
+  return (
+    <>
+      {/* <HelloReact/>
 			<HelloWorld/>
 			<Jsx1/>
 			<Jsx2/>
@@ -67,17 +70,15 @@ const App = () => {
 			 <Birthday/>
 	<Useeffect1/>
 <Clock3/>
-			 */}
-
-<Useeffect3/>
-
-	
+		<Useeffect3/>
+		<CountryFilter/>
+		<Useref/>
 		
-	
-	
-			
-		</>
-	);
+		*/}
+
+      <Scroll/>
+    </>
+  );
 };
 
 export default App;
