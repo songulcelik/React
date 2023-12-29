@@ -31,11 +31,14 @@ import Clock3 from "./components/21-clock/clock3";
 import CountryFilter from "./components/22-country-filter/country-filter";
 import Useref from "./components/23-useref/useref";
 import Scroll from "./components/24-useref/scroll";
+import ClassComp from "./components/25-class-comp/class-comp";
+import UserList from "./components/26-user-cards/user-list";
+import Countries from "./components/27-countries/countries";
 
 const App = () => {
   return (
     <>
-      {/* <HelloReact/>
+      {/*   <HelloReact/>
 			<HelloWorld/>
 			<Jsx1/>
 			<Jsx2/>
@@ -51,32 +54,35 @@ const App = () => {
 			<Clock1 />
 			<Greetings/>
 			<Products />
-			 <Clock2 backgroundColor="blue" color="white"/>
-			 <Base64/>
-			 <Image/>
-			 <Gallery/>
-			 	<ProfileCard avatar="img/profile.jpg" name="Jeniffer Lopez" location="California, USA" shot="544" followers="50K" following="100"  />
-			 	 <BootstrapStatic/>
-			 <BootstrapDynamic/>
-			  <Icons/>
+			<Clock2 backgroundColor="blue" color="white"/>
+			<Base64/>
+			<Image/>
+			<Gallery/>
+			<ProfileCard avatar="img/profile.jpg" name="Jeniffer Lopez" location="California, USA" shot="544" followers="50K" following="100"  />
+			<BootstrapStatic/>
+			<BootstrapDynamic/>
+			<Icons/>
 			<Events/>
-
 			<Shop/>
-	 <Stateless/>
-	<State/>
-		<Counter/>
-<Counter2/>
-
-			 <Birthday/>
-	<Useeffect1/>
-<Clock3/>
-		<Useeffect3/>
-		<CountryFilter/>
-		<Useref/>
+	        <Stateless/>
+	        <State/>
+		    <Counter/>
+            <Counter2/>
+			<Birthday/>
+	        <Useeffect1/>
+            <Clock3/>
+		    <Useeffect3/>
+		    <CountryFilter/>
+		    <Useref />
+			<Scroll/>
+			<ClassComp/>
+			<UserList/>
 		
 		*/}
-
-      <Scroll/>
+		
+		<Countries/>
+		
+		
     </>
   );
 };

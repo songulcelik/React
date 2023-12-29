@@ -1,61 +1,74 @@
-import React, { useEffect, useRef } from 'react'
-import { Container } from 'react-bootstrap';
-import "./scroll.scss"
-
-
-
-const Paragraphs = ({rowCount=10}) => {
-  return (
-   <>
-   {[... new Array(rowCount)].map((_,index)=>(<p key={index}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus atque optio veritatis ab. Perspiciatis numquam, error odit maiores molestiae debitis excepturi est aliquid nisi fugit labore doloribus, omnis explicabo atque?
-   Hic id dignissimos quis? A eos natus inventore ratione sed obcaecati eveniet pariatur corporis consectetur minus vel, ducimus voluptate quis assumenda labore officiis reprehenderit earum, praesentium quo aliquam. Totam, corrupti.
-   Cupiditate eum modi quam consectetur dignissimos voluptatem inventore doloribus sed, eaque quas odit, libero rerum quisquam error fugiat. Facilis, laudantium distinctio. Est dolores alias beatae quisquam autem numquam officia at.
-   Quasi provident iste molestiae autem quam pariatur veniam, eos itaque distinctio deserunt beatae dolorem dignissimos, cum alias ipsum ut perferendis, quo ex! Molestias sequi numquam magnam eaque aliquid sapiente quidem.
-   Aspernatur atque ad numquam expedita facere. Accusantium quas maiores libero, odio et sapiente porro necessitatibus voluptas sed ipsa minus id dicta perspiciatis vel a facilis omnis similique accusamus illum corrupti.</p>) )}
-   </>
-  )
-}
-
-
+import React, { useEffect, useRef } from "react";
+import { Container } from "react-bootstrap";
+import "./scroll.scss";
+const Paragraphs = ({ rowCount = 10 }) => {
+    return (
+        <>
+            {[...new Array(rowCount)].map((_, index) => (
+                <p key={index}>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad,
+                    perferendis neque sapiente iusto reiciendis praesentium sit
+                    est atque sequi consequuntur laudantium nihil quo accusamus
+                    voluptatibus in! Tenetur earum dicta nostrum. Repellat,
+                    itaque expedita? Aspernatur quisquam deserunt sed pariatur
+                    corrupti? Deleniti, at? Natus necessitatibus animi dolorum
+                    laudantium, adipisci ipsa placeat quo impedit voluptatem
+                    rerum vel libero dolore doloremque qui veritatis
+                    voluptatibus! Recusandae incidunt fuga dolorum reprehenderit
+                    dolor asperiores modi sed soluta libero iure accusamus
+                    repellendus veritatis cumque sit labore cum impedit placeat
+                    vero temporibus qui, totam numquam quam. Maiores, deleniti
+                    explicabo! Obcaecati id, animi, praesentium deserunt cum
+                    cupiditate vitae corporis nesciunt laborum porro quod
+                    officia tempore. Dolor praesentium beatae, voluptates rem
+                    voluptatibus error minus delectus deserunt qui veritatis a,
+                    sed iure? Quaerat distinctio facilis consequatur nobis
+                    similique aut commodi, delectus, illo amet asperiores
+                    exercitationem? Quas distinctio esse amet in, incidunt vitae
+                    sequi ducimus, maiores voluptas ea ad, nam corrupti
+                    doloremque architecto.
+                </p>
+            ))}
+        </>
+    );
+};
 const Scroll = () => {
-
-    const refAboutUs=useRef();
-
+    const refAboutUs = useRef(null);
     const handleScroll = () => {
-        const aboutUs=refAboutUs.current;
-        const currentScrollPosition=window.scrollY;
-        const aboutUsScrollPosition=aboutUs.offsetTop;
-        const aboutUsHeight= aboutUs.offsetHeight;
-
-        if(currentScrollPosition>= aboutUsScrollPosition - aboutUsHeight){
-            aboutUs.classList.add("active")
+        const aboutUs = refAboutUs.current;
+        const currentScrollPosition = window.scrollY; // sayfanın scroll posizyonu
+        const aboutUsScrollPosition = aboutUs.offsetTop; // aboutUs elementinin scroll pozisyonu
+        const aboutUsHeight = aboutUs.offsetHeight; // aboutUs elementinin yüksekliği
+        if (currentScrollPosition >= aboutUsScrollPosition - aboutUsHeight) {
+            aboutUs.classList.add("active");
         }
-      
-    }
-    
-
-    useEffect(()=>{
+        console.log(currentScrollPosition, aboutUsScrollPosition);
+    };
+    useEffect(() => {
         document.addEventListener("scroll", handleScroll);
-        return(()=>{
+        return () => {
             document.removeEventListener("scroll", handleScroll);
-        })
-
-    },[])
-
-
-
-
-  return (
-   <Container className='mt-4'>
-    <Paragraphs/>
-    <section className='about-us' ref={refAboutUs}>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam nobis placeat repellendus pariatur tenetur! Tempora, dicta, omnis quos ullam sapiente ipsam enim veritatis voluptatem, obcaecati error quisquam reiciendis libero delectus?
-        Ullam laudantium soluta sapiente at repudiandae maiores animi. Quibusdam a, ut ullam autem fugit quod nam, error eaque nostrum libero quis, deleniti beatae? Culpa, animi deleniti reprehenderit esse facere magni.
-        Reiciendis alias quod similique officiis possimus hic dolor vero facilis, debitis doloremque saepe, reprehenderit, ullam error? Ex nam mollitia optio omnis consequatur magnam? Necessitatibus id amet accusantium eveniet, quos consequuntur.
-    </section>
-    <Paragraphs/>
-   </Container>
-  )
-}
-
+        };
+    }, []);
+    return (
+        <Container className="mt-4">
+            <Paragraphs />
+            <section className="about-us" ref={refAboutUs}>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Consequatur quisquam minus quibusdam culpa. Voluptatum soluta
+                asperiores perspiciatis sint itaque provident quaerat
+                consequuntur iure illum ea. Qui porro sint aut omnis! Totam
+                beatae molestiae nesciunt dolores eum facilis nulla alias
+                perspiciatis nostrum deleniti minus harum quisquam, fuga
+                temporibus. Architecto repellat deleniti in velit consequuntur,
+                modi deserunt quos officia cupiditate ut quaerat! Laboriosam,
+                minus voluptatum dolorem voluptate ducimus, quod commodi est
+                doloremque doloribus aut magni officiis unde voluptates? Eius,
+                quod laudantium? Ipsa voluptatum expedita dolorum tempora? Iste
+                pariatur maxime dicta rem est?
+            </section>
+            <Paragraphs />
+        </Container>
+    );
+};
 export default Scroll;
