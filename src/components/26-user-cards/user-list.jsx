@@ -3,7 +3,7 @@ import UserCard from "./user-card";
 import { Col, Container, Row, Spinner } from "react-bootstrap";
 const API_BASE_URL = "https://65775f1c197926adf62e1ccb.mockapi.io/api/v1";
 
-const wait =(s)=> new Promise((resolve)=>setTimeout(resolve,s*1000))
+const wait =(s)=> new Promise((resolve)=>setTimeout(resolve,s*1000))//bekletme fonksiyonu
 
 
 const UserList = () => {
