@@ -1,58 +1,49 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
+import menu from "./menu.json";
+import "./header.scss"
+import Currencies from "./currencies";
 
 const Header = () => {
-	const { pathname } = useLocation();
-	const [show, setShow] = useState(false);
+    const { pathname } = useLocation();
+  
+    return (
+        <Navbar expand={false} className="bg-info mb-3" collapseOnSelect>
+            <Container fluid>
+                <Navbar.Brand href="#">REACT.JS Practises</Navbar.Brand>
 
-	useEffect(() => {
-        setShow(false);
-    }, [pathname]);
-
-	return (
-		<Navbar expand="none" className="bg-info mb-3">
-			<Container fluid>
-				<Navbar.Brand href="#">REACT.JS Practises</Navbar.Brand>
-				<Navbar.Toggle aria-controls={`offcanvasNavbar`}/>
-				<Navbar.Offcanvas
-					id={`offcanvasNavbar`}
-					aria-labelledby={`offcanvasNavbarLabel`}
-					placement="start"
-                    show={show}
-				>
-					<Offcanvas.Header closeButton className="bg-info">
-						<Offcanvas.Title id={`offcanvasNavbarLabel`}>
-							REACT.JS Practises
-						</Offcanvas.Title>
-					</Offcanvas.Header>
-					<Offcanvas.Body>
-						<Nav className="justify-content-end flex-grow-1 pe-3">
-							
-							<Nav.Link as={Link} to="/">
-								Home
-							</Nav.Link>
-							<Nav.Link as={Link} to="/hello-world">
-								Hello World
-							</Nav.Link>
-							<Nav.Link as={Link} to="/hello-react">
-								Hello React
-							</Nav.Link>
-							<Nav.Link as={Link} to="/jsx1">
-								JSX1
-							</Nav.Link>
-							<Nav.Link as={Link} to="/jsx2">
-								JSX2
-							</Nav.Link>
-							<Nav.Link as={Link} to="/jsx3">
-								JSX3
-							</Nav.Link>
-						</Nav>
-					</Offcanvas.Body>
-				</Navbar.Offcanvas>
-			</Container>
-		</Navbar>
-	);
+                <Currencies/>
+                <Navbar.Toggle aria-controls={`offcanvasNavbar`} />
+                <Navbar.Offcanvas
+                    id={`offcanvasNavbar`}
+                    aria-labelledby={`offcanvasNavbarLabel`}
+                    placement="start"
+                >
+                    <Offcanvas.Header closeButton className="bg-info">
+                        <Offcanvas.Title id={`offcanvasNavbarLabel`}>
+                            REACT.JS Practises
+                        </Offcanvas.Title>
+                    </Offcanvas.Header>
+                    <Offcanvas.Body>
+                        <Nav className="justify-content-end flex-grow-1 pe-3">
+                            {/* Tıklandığında kapanması için Navbar a collapseOnSelect ekledik. Bu özelliğin çalışabilmesi için tüm Nav.Link elere eventKey prop u eklenemlidir. */}
+                            {menu.map((item, index) => (
+                                <Nav.Link
+                                key={item.link}
+								active={pathname===item.link}
+                                    eventKey={index}
+                                    as={Link}
+                                    to={item.link}
+                                >
+                                    {item.title}
+                                </Nav.Link>
+                            ))}
+                        </Nav>
+                    </Offcanvas.Body>
+                </Navbar.Offcanvas>
+            </Container>
+        </Navbar>
+    );
 };
-
 export default Header;

@@ -46,6 +46,9 @@ import Header from "../components/00-home/header";
 import Footer from "../components/00-home/footer";
 import { Container } from "react-bootstrap";
 import Home from "../components/00-home/home";
+import Useparams from "../components/30-routing/useparams";
+import Usenavigate from "../components/30-routing/usenavigate";
+import Exchange from "../components/31-exchange";
 
 const AppRouter = () => {
 	return (
@@ -60,6 +63,10 @@ const AppRouter = () => {
 						<Route path="/jsx1" element={<Jsx1 />} />
 						<Route path="/jsx2" element={<Jsx2 />} />
 						<Route path="/jsx3" element={<Jsx3 />} />
+						<Route path="/jsx4" element={<Jsx4 />} />
+						<Route path="/useparams/:id" element={<Useparams />} />
+						<Route path="/usenavigate" element={<Usenavigate />} />
+						<Route path="/exchange" element={<Exchange />} />
 					</Routes>
 				</Container>
 				<Footer />
