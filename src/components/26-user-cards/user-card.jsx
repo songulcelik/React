@@ -1,9 +1,10 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 import { LiaEnvelopeOpen } from 'react-icons/lia'
+
 const UserCard = ({avatar, firstName, lastName, email}) => {
   return (
-    <Card className='h-100'>
+    <Card className="h-100">
         <Card.Img variant="top" src={avatar}/>
         <Card.Body>
             <Card.Title>{firstName} {lastName}</Card.Title>
@@ -12,4 +13,5 @@ const UserCard = ({avatar, firstName, lastName, email}) => {
     </Card>
   )
 }
+
 export default UserCard

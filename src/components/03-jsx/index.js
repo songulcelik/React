@@ -6,4 +6,4 @@ import Jsx5 from "./jsx5";
 import Jsx6 from "./jsx6";
 import Jsx7 from "./jsx7";
 
-export {Jsx1,Jsx2,Jsx3,Jsx4,Jsx5,Jsx6,Jsx7};
+export { Jsx1, Jsx2, Jsx3, Jsx4, Jsx5, Jsx6, Jsx7 };

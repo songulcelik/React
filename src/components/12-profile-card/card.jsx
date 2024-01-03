@@ -1,21 +1,24 @@
 import React from "react";
 import "./style.scss";
+
 const ProfileCard = ({
-    avatar,
-    name,
-    location,
-    shot,
-    followers,
-    following,
+	avatar,
+	name,
+	location,
+	shot,
+	followers,
+	following,
 }) => {
-    return <div className="profile-card">
+	return <div className="profile-card">
         <div className="header">
             <img src={avatar} alt={name}/>
         </div>
         <div className="content">
             <img className="avatar" src={avatar} alt={name}/>
+
             <h2>{name}</h2>
             <h4>{location}</h4>
+
             <ul className="stats">
                 <li>
                     <h3>{shot}</h3>
@@ -30,7 +33,9 @@ const ProfileCard = ({
                     <p>Following</p>
                 </li>
             </ul>
+
         </div>
     </div>;
 };
-export default ProfileCard
+
+export default ProfileCard;
