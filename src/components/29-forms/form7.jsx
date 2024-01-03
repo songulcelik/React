@@ -1,12 +1,12 @@
 import { useFormik } from "formik";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Container, Form, Spinner } from "react-bootstrap";
 import * as Yup from "yup";
 const API_URL = "https://65775f19197926adf62e1c85.mockapi.io/api/v1";
-const Form6 = () => {
+const Form7 = () => {
     const [loading, setLoading] = useState(false);
     const initialValues = {
-        firstName: "",
+        firstName: "ad",
         lastName: "",
         email: "",
         phone: "",
@@ -24,20 +24,19 @@ const Form6 = () => {
         // Bu aşamada values API a gönderilir (fetch/axios)
         setLoading(true);
         try {
-            const resp = await fetch(`${API_URL}/users`, {
-                method: "POST",
+            const resp = await fetch(`${API_URL}/users/${values.id}`, {
+                method: "PUT",
                 body: JSON.stringify(values),
-                headers:{
-                    "Content-Type": "application/json"
-                }
-            })
-            if(!resp.ok) throw new Error("Something went wrong");
-            alert("User was created");
-            formik.resetForm();
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+            if (!resp.ok) throw new Error("Something went wrong");
+            alert("User was updated");
+    
         } catch (err) {
-            console.log(err.message)
-        }
-        finally{
+            console.log(err.message);
+        } finally {
             setLoading(false);
         }
     };
@@ -46,6 +45,19 @@ const Form6 = () => {
         validationSchema,
         onSubmit,
     });
+    const loadUser = async () => {
+        try {
+            const resp = await fetch(`${API_URL}/users/12`);
+            const data = await resp.json();
+            console.log(data);
+            formik.setValues(data)
+        } catch (err) {
+            console.log(err)
+        }
+    };
+    useEffect(() => {
+      loadUser()
+    }, [])
     return (
         <Container className="mt-5">
             {/* HTML5 validation devre dışı bırakmak için noValidate */}
@@ -56,7 +68,9 @@ const Form6 = () => {
                         type="text"
                         placeholder=""
                         {...formik.getFieldProps("firstName")}
-                        isInvalid={formik.touched.firstName && formik.errors.firstName}
+                        isInvalid={
+                            formik.touched.firstName && formik.errors.firstName
+                        }
                         /*                      
                         name="firstName"
                         value={formik.values.firstName}
@@ -73,7 +87,9 @@ const Form6 = () => {
                         type="text"
                         placeholder=""
                         {...formik.getFieldProps("lastName")}
-                        isInvalid={formik.touched.lastName && formik.errors.lastName}
+                        isInvalid={
+                            formik.touched.lastName && formik.errors.lastName
+                        }
                     />
                     <Form.Control.Feedback type="invalid">
                         {formik.errors.lastName}
@@ -103,11 +119,15 @@ const Form6 = () => {
                         {formik.errors.phone}
                     </Form.Control.Feedback>
                 </Form.Group>
-                <Button type="submit" variant="warning" disabled={ loading || !formik.dirty || !formik.isValid }>
-                    {loading && <Spinner size="sm"/>}   Send
+                <Button
+                    type="submit"
+                    variant="warning"
+                    disabled={loading || !formik.dirty || !formik.isValid}
+                >
+                    {loading && <Spinner size="sm" />} Send
                 </Button>
             </Form>
         </Container>
     );
 };
-export default Form6;
+export default Form7;
